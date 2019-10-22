@@ -25,7 +25,7 @@ public class Main {
       "WAW HKT 1000"
     );
     double ratePLNvsEUR = 4.30;
-    List<String> result = dest.parallelStream().filter(destination -> destination.charAt(0) == 'W' && destination.charAt(1) == 'A'
+    List<String> result = dest.stream().filter(destination -> destination.charAt(0) == 'W' && destination.charAt(1) == 'A'
             && destination.charAt(2) == 'W').map((destination) -> {
       double price = Double.parseDouble(destination.split(" ")[2]) * ratePLNvsEUR;
       String in = destination.split(" ")[1];
